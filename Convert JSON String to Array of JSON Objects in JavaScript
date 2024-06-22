@@ -1,0 +1,17 @@
+###Convert JSON String to Array of JSON Objects in JavaScript
+
+// JSON String Representing an Array of Objects
+const jsonStr = '[{"name": "Adams", "age": 30}, {"name": "Davis", "age": 25}, {"name": "Evans", "age": 35}]';
+
+// Parse JSON string to array of objects
+const jsonArray = JSON.parse(jsonStr);
+
+// Output the array of objects
+console.log(jsonArray);
+
+Output
+[
+  { name: 'Adams', age: 30 },
+  { name: 'Davis', age: 25 },
+  { name: 'Evans', age: 35 }
+]
