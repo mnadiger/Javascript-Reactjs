@@ -96,3 +96,14 @@ function printMenuName(menuData) {
  const result = printMenuName(menuData);
  console.log(result)
 
+
+
+
+
+########Different approach:  check out
+
+const getObjectValues = (obj) => (obj && typeof obj === 'object')
+ ? Object.values(obj).map(getObjectValues).flat()
+ : [obj]
+
+console.log(getObjectValues(menuData))
