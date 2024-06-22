@@ -1,0 +1,38 @@
+#Testing the knowledge of Hoisting concepts
+
+#Problem:
+
+function x() {
+    setTimeout(function () {
+        console.log(i);
+    }, 1000);
+
+    var i = 1;
+}
+
+x();
+
+
+#Output: 1(after one second)
+
+#Explainaition:
+- Concept of Hoisting 
+- Check only var is hoisting or anything else like let, const 
+- check also if anything like function in JS also hoiting 
+- check which all not hoiting in JS
+- Check how hoisted var, function stacked and executing in the order
+
+#Slight changes can be made and asked here in sometimes:
+
+function x() {
+
+   var i = 1;
+
+    setTimeout(function () {
+        console.log(i);
+    }, 1000);
+
+   
+}
+
+x();
