@@ -1,0 +1,139 @@
+#Remove Null Objects from Nested Array of objects in JavaScript ?
+
+#Approach1: Using every Method
+
+// Input arr
+let arr = [
+    { id: 1, values: [1, 2, 3] },
+    { id: 2, values: [null, 5, 6] },
+    { id: 3, values: [7, 8, 9] },
+    { id: 4, values: [10, null, 12] },
+];
+// Removing null using every
+let output = arr.filter((obj) => {
+    return obj.values.every((value) => {
+        return value !== null;
+});
+});
+
+// Output
+console.log(output);
+
+[ { id: 1, values: [ 1, 2, 3 ] }, { id: 3, values: [ 7, 8, 9 ] } ]
+
+
+
+************************************************
+
+#Approch2:  Using includes Method
+
+// Input arr
+let arr = [
+{ id: 1, values: [1, 2, 3] },
+{ id: 2, values: [null, 5, 6] },
+{ id: 3, values: [7, 8, 9] },
+{ id: 4, values: [10, null, 12] },
+];
+
+// Removing null using includes
+let output = arr.filter((obj) => {
+return !obj.values.includes(null);
+});
+
+// Output
+console.log(output);
+
+[ { id: 1, values: [ 1, 2, 3 ] }, { id: 3, values: [ 7, 8, 9 ] } ]
+
+
+**********************************************************
+
+
+#Approach3:  Using reduce Method
+
+// Input arr
+let arr = [
+    { id: 1, values: [1, 2, 3] },
+    { id: 2, values: [null, 5, 6] },
+    { id: 3, values: [7, 8, 9] },
+    { id: 4, values: [10, null, 12] },
+];
+
+// Removing null using reduce
+let output = arr.reduce((acc, obj) => {
+    if (!obj.values.includes(null)) {
+    acc.push({ ...obj });
+    }
+    return acc;
+}, []);
+
+// Output
+console.log(output);
+
+
+Output
+[ { id: 1, values: [ 1, 2, 3 ] }, { id: 3, values: [ 7, 8, 9 ] } ]
+
+
+***************************************************
+
+#Approach4: Using Recursion and filter()
+
+function removeNullObjects(arr) {
+  return arr.filter(obj => {
+    // If the object is null, remove it
+    if (obj === null) {
+      return false;
+    }
+    // If the object contains a nested array
+    if (Array.isArray(obj.values)) {
+      // Recursively remove null objects from the nested array
+      obj.values = removeNullObjects(obj.values);
+    }
+    // Keep the object if it's not null
+    return obj.values !== null;
+  });
+}
+
+// Input array
+let arr = [
+  { id: 1, values: [1, 2, 3] },
+  { id: 2, values: [null, 5, 6] },
+  { id: 3, values: [7, 8, 9] },
+  { id: 4, values: [10, null, 12] }
+];
+
+// Output
+let output = removeNullObjects(arr);
+console.log(output);
+
+
+Output
+[
+  { id: 1, values: [ 1, 2, 3 ] },
+  { id: 2, values: [ 5, 6 ] },
+  { id: 3, values: [ 7, 8, 9 ] },
+  { id: 4, values: [ 10, 12 ] }
+]
+
+
+*******************************************
+
+#Approach5: Using flatMap() Method
+
+let arr = [
+    { id: 1, values: [1, 2, 3] },
+    { id: 2, values: [null, 5, 6] },
+    { id: 3, values: [7, 8, 9] },
+    { id: 4, values: [10, null, 12] },
+];
+
+// Removing null using flatMap
+let output = arr.map(obj => ({
+    ...obj,
+    values: obj.values.flatMap(value => value !== null ? [value] : [])
+})).filter(obj => obj.values.length > 0);
+
+console.log("Before:", arr);
+console.log("After:", output);
+
