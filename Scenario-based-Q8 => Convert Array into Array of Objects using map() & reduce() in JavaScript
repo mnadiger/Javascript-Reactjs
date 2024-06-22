@@ -1,1 +1,42 @@
+#Using map()
 
+
+const array = ['apple', 'banana', 'cherry'];
+
+// Using map() to convert array into array of objects
+const arrayOfObjects = array.map((item, index) => {
+    return { index: index, value: item };
+});
+
+// Output
+console.log("Array of Objects (using map()): ", arrayOfObjects);
+
+// Output
+Array of Objects (using map()):  [
+  { index: 0, value: 'apple' },
+  { index: 1, value: 'banana' },
+  { index: 2, value: 'cherry' }
+]
+
+**********************************************************
+
+
+#Using reduce()
+
+const array = ['apple', 'banana', 'cherry'];
+
+// Using reduce() to convert array into array of objects
+const arrayOfObjects = array.reduce((acc, curr, index) => {
+    acc.push({ index: index, value: curr });
+    return acc;
+}, []);
+
+// Output
+console.log("Array of Objects (using reduce()): ", arrayOfObjects);
+
+Output
+Array of Objects (using reduce()):  [
+  { index: 0, value: 'apple' },
+  { index: 1, value: 'banana' },
+  { index: 2, value: 'cherry' }
+]
