@@ -1,1 +1,113 @@
 
+1.   Using Set
+
+let arr = [
+{ id: 1, name: "Geek1" },
+{ id: 2, name: "Geek2" },
+{ id: 1, name: "Geek1" },
+{ id: 3, name: "Geek3" },
+];
+
+// unique objects using Set
+let uniqueArr = 
+    [...new Set(arr.map(JSON.stringify))].map(JSON.parse);
+
+// printing output
+console.log("Input Array:", arr);
+console.log("Unique Array:", uniqueArr);
+
+************************************************************
+
+
+2. Using filter() and indexOf() methods
+
+let arr = [
+{ id: 1, name: "Geek1" },
+{ id: 2, name: "Geek2" },
+{ id: 1, name: "Geek1" },
+{ id: 3, name: "Geek3" },
+];
+
+// Unique array using filter and indexOf functions
+let uniqueArr = arr.filter(
+(value, index, self) =>
+    self.findIndex((obj) => 
+        JSON.stringify(obj) === JSON.stringify(value)) ===
+    index
+);
+
+// Printing output
+console.log("Input Array:", arr);
+console.log("Unique Array:", uniqueArr);
+
+
+*******************************************
+
+#3. Using Map:
+
+let arr = [
+{ id: 1, name: "Geek1" },
+{ id: 2, name: "Geek2" },
+{ id: 1, name: "Geek1" },
+{ id: 3, name: "Geek3" },
+];
+let map = new Map();
+
+// Removing duplicate objects using map
+let uniqueArr = [];
+arr.forEach((obj) => {
+const key = JSON.stringify(obj);
+if (!map.has(key)) {
+    map.set(key, true);
+    uniqueArr.push(obj);
+}
+});
+
+// Printing output
+console.log("Input Array:", arr);
+console.log("Unique Array:", uniqueArr);
+
+
+************************************************
+
+#4. Using reduce()
+
+let arr = [
+{ id: 1, name: "Geek1" },
+{ id: 2, name: "Geek2" },
+{ id: 1, name: "Geek1" },
+{ id: 3, name: "Geek3" },
+];
+
+// Removing objects using reduce()
+let uniqueArr = arr.reduce((acc, obj) => {
+const existingObj = acc.find(
+    (item) => JSON.stringify(item) 
+        === JSON.stringify(obj)
+);
+if (!existingObj) {
+    acc.push(obj);
+}
+return acc;
+}, []);
+
+// Printing output
+console.log("Input Array:", arr);
+console.log("Unique Array:", uniqueArr);
+
+***************************************************
+
+#5. Using Lodash Library
+
+const _ = require('lodash');
+
+let arr = [
+  { id: 1, name: 'Alice' },
+  { id: 2, name: 'Bob' },
+  { id: 1, name: 'Alice' }
+];
+
+let uniqueObjects = _.uniqWith(arr, _.isEqual);
+console.log(uniqueObjects);
+
+
