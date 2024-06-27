@@ -1,0 +1,13 @@
+.app-container {
+    text-align: center;
+  }
+
+  ul {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin: 5px;
+  }
