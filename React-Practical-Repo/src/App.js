@@ -9,8 +9,8 @@ import MemoTutorial from "./UseMemo/MemoTutorial";
 import CallBackTutorial from "./UseCallback/CallbackTutorial";
 
 //HOC
-import withCounter from './components/withCounter';
-import Counter from './components/Counter';
+import withCounter from './withCounter';
+import Counter from './Counter';
 
 const EnhancedCounter = withCounter(Counter);
 
