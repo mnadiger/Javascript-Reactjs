@@ -1,0 +1,41 @@
+/**
+Valuelabs:
+
+Function to get the k-th largest number from an array of numbers in JavaScript:
+
+let arr = [1, 11, 22,1111, 222, 444, 555, 0, 3, 1111, 3, 4, 45, 1, 2, 122]
+
+Input number: 3
+Output: 444
+
+
+Input: 2
+Output: 555
+
+***/
+
+1. Sorting Approach:  Sort the array in descending order. Return the element at index k - 1.
+
+
+let arr = [1, 11, 22,1111, 222, 444, 555, 0, 3, 1111, 3, 4, 45, 1, 2, 122]
+
+
+
+
+function getNthLargestNumber(num) {
+    
+    // Remove Duplicate elements
+    const uniqueArr = [...new Set(arr)]
+    
+    
+    //sort the array in descending order "arr.sort()=> sorts in Ascending) and arr.sort((a,b) => b-a) sorts in Descending order
+    
+    const sortedArr = uniqueArr.sort((a,b) => b-a);
+    
+    //Return the number - 1 as the index starts with zero
+    return sortedArr[num - 1]
+   
+    
+}
+
+console.log(getNthLargestNumber(3)) // 444
