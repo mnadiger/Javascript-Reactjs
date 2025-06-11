@@ -8,7 +8,17 @@ import RefTutorial from "./UseRef/RefTutorial";
 import MemoTutorial from "./UseMemo/MemoTutorial";
 import CallBackTutorial from "./UseCallback/CallbackTutorial";
 
+//HOC
+import withCounter from './components/withCounter';
+import Counter from './components/Counter';
+
+const EnhancedCounter = withCounter(Counter);
+
 function App() {
+  
+  //Enable the below section for HOC testing.
+  //return <EnhancedCounter/>;
+  
   return (
     <div className="App">
       <StateTutorial />
