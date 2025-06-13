@@ -1,0 +1,75 @@
+***Following statements used to create a new empty array:**
+    A. let arr = [ ];
+    
+    B. let arr = new Array(0);
+    
+    C. let arr = Array();
+    
+    Note: [] uses the literal syntax, new Array(0) uses the constructor with length 0, and Array() uses the shorthand constructor.
+
+**The push() method adds elements to the end of an array, whereas pop() removes from the end
+** and shift()/unshift() works with the beginning of the array to remove and add elements respectively.
+
+**What is the output of the following code snippet?
+
+    let arr1 = [1, 2, 3];
+    let arr2 = arr1;
+    arr2.push(4);
+    console.log(arr1) // [1, 2, 3, 4]
+
+    
+    Ans: [1, 2, 3, 4]
+    
+    Explanation:  The array arr2 is a reference to the same array object as arr1. Therefore, when we modify arr2, arr1 is also modified.
+    and   also  console.log(arr2) // [1, 2, 3, 4]
+
+
+
+
+
+***SPLICE() : The splice() method in JavaScript is used to modify an array by adding, removing, or replacing elements. It directly alters the original array and returns an array of the removed elements.
+
+Syntax: array.splice(start, deleteCount, item1, item2, ...);
+
+Parameters:
+    start: The index at which to begin modifying the array. If negative, it counts from the end of the array. 
+    deleteCount: (Optional) The number of elements to remove starting from the start index. If omitted, all elements from start to the end are removed. 
+    item1, item2, ...: (Optional) New elements to insert into the array at the start index. 
+
+Key Behaviors:
+    Modifies the original array:  Unlike slice(), splice() changes the array it's called on.
+    Returns removed elements: Returns an array containing the elements removed. If no elements are removed, it returns an empty array.
+    Adding elements: If deleteCount is 0, you can use splice() to insert new elements without removing any.
+    Negative start index: A negative start index counts from the end of the array (e.g., -1 is the last element).
+    Versatility: splice() can be used to remove, replace, or add elements, making it a powerful array manipulation tool.
+
+Examples:
+
+    let fruits = ["apple", "banana", "cherry", "date"];
+    
+    // Remove 1 element at index 2
+    let removed = fruits.splice(2, 1); 
+    console.log(fruits); // Output: ["apple", "banana", "date"]
+    console.log(removed); // Output: ["cherry"]
+    
+    // Insert "grape" at index 1, without removing any
+    fruits.splice(1, 0, "grape");
+    console.log(fruits); // Output: ["apple", "grape", "banana", "date"]
+    
+    // Replace "banana" with "kiwi" at index 2
+    fruits.splice(2, 1, "kiwi");
+    console.log(fruits); // Output: ["apple", "grape", "kiwi", "date"]
+    
+    // Remove last 2 elements
+    fruits.splice(-2, 2);
+    console.log(fruits); // Output: ["apple", "grape"]
+
+
+
+sd
+sd
+asd
+asd
+asd
+as
+d
