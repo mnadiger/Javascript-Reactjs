@@ -65,6 +65,58 @@ Examples:
     console.log(fruits); // Output: ["apple", "grape"]
 
 
+**SLICE(): The slice() method in JavaScript is used to extract a section of an array or string and returns a new array or string. It does not modify the original array or string.
+
+    **Array slice() Method
+    
+        Syntax: array.slice(start, end)
+
+            start: The index to start the slice from (inclusive). If omitted, defaults to 0.
+            end: The index to end the slice at (exclusive). If omitted, defaults to the end of the array.
+
+        Behavior:
+            Returns a new array containing the elements from the start index up to (but not including) the end index.
+            If start is negative, it counts from the end of the array.
+            If end is negative, it counts from the end of the array.
+            If start is greater than end, an empty array is returned.
+            If end is greater than the length of the array, it slices to the end of the array.
+            It creates a shallow copy of the array. Changes to elements in the copied array will affect the original array if they are objects.
+
+        Examples:
+
+            const arr = [1, 2, 3, 4, 5];
+            const slicedArr1 = arr.slice(1, 3); // Returns [2, 3]
+            const slicedArr2 = arr.slice(2);    // Returns [3, 4, 5]
+            const slicedArr3 = arr.slice(-2);   // Returns [4, 5]
+            const slicedArr4 = arr.slice(1, -1); // Returns [2, 3, 4]
+
+    **String slice() Method
+
+        Syntax:  string.slice(start, end)
+            start: The index to start the slice from (inclusive).
+            end: The index to end the slice at (exclusive).
+
+        Behavior:
+            Returns a new string containing the characters from the start index up to (but not including) the end index.
+            If start is negative, it counts from the end of the string.
+            If end is negative, it counts from the end of the string.
+            If start is greater than end, an empty string is returned.
+
+        Examples:
+
+            const str = "Hello World";
+            const slicedStr1 = str.slice(1, 5); // Returns "ello"
+            const slicedStr2 = str.slice(6); // Returns "World"
+            const slicedStr3 = str.slice(-5); // Returns "World"
+            const slicedStr4 = str.slice(1, -1); // Returns "ello Worl"
+
+    Main Difference : slice() creates a new array, while splice() modifies the original array.
+
+
+
+
+
+
 
 sd
 sd
