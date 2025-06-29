@@ -1,2 +1,2 @@
-# Frontend-Programming-Practice
-Frontend-Programming-Practice
+# Frontend-Programming
+Frontend-Programming
