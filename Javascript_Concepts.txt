@@ -1,11 +1,11 @@
-***Following statements used to create a new empty array:**
+// ***Following statements used to create a new empty array:**
     A. let arr = [ ];
     
     B. let arr = new Array(0);
     
     C. let arr = Array();
     
-    Note: [] uses the literal syntax, new Array(0) uses the constructor with length 0, and Array() uses the shorthand constructor.
+    // Note: [] uses the literal syntax, new Array(0) uses the constructor with length 0, and Array() uses the shorthand constructor.
 
 **The push() method adds elements to the end of an array, whereas pop() removes from the end
 ** and shift()/unshift() works with the beginning of the array to remove and add elements respectively.
