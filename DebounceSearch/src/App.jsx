@@ -1,17 +1,30 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+
+import SearchComponent from './SearchComponent';
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState("")
 
   return (
-    <>
-    <h1>Debounce Example</h1>
-    <input type="text" placeholder="Search..." />
-    <button>Search</button>
-    <p>Search term: {searchTerm}</p>
-    </>
-  )
+    <Box
+      sx={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        bgcolor: '#f5f5f5',
+        pt: 6,
+      }}
+    >
+      <Typography variant="h4" component="h1" gutterBottom>
+        Debounce Example
+      </Typography>
+      <SearchComponent />
+    </Box>
+  );
 }
 
 export default App
