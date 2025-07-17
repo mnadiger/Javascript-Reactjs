@@ -1,0 +1,223 @@
+// Find the output and explain:
+
+
+1. [] == ![]
+
+console.log([] == ![])
+
+// Output: true
+
+// Note:evaluates to true, and this can seem very confusing at first glance. 
+// But this happens due to type coercion in JavaScript. Let's break it down step by step:
+
+  -  Step 1: Evaluate ![]
+            -  [] (an empty array) is a truthy value.
+            
+            -  ![] is negation, so it becomes:     ![] === false
+
+            - So, now the expression becomes:   [] == false
+
+  -  Step 2: Type Coercion in == (loose equality)
+
+
+          -  JavaScript's == operator performs type coercion when comparing values of different types.
+
+          - So, for the expression :    [] == false
+        
+              - When you compare an object (like an array) to a boolean, here's what happens:
+
+                    -  Rule:
+                        -  If one side is an object and the other is a primitive:
+                        
+                        -  JavaScript tries to convert the object to a primitive (string or number) via .toString() or .valueOf().
+
+          -  So, now the expression become as this:     [] == false →→→→→→→→→ '' == false     (because [].toString() → '')
+
+          - Now, the expression becomes: '' == false
+
+    -   Final Step: Coercion Again ('' == false)
+
+          Now, we compare a string to a boolean.
+          
+          JavaScript converts both sides to numbers:
+          
+         i.e   Number('') → 0
+               Number(false) → 0
+
+    - So, 0 == 0 → true ✅
+
+
+NOTE SHORT CUT:
+
+[] → ![]  ==>    [] == false    ==>  '' == false      ==>  0 == 0  ==> TRUE
+
+
+
+
+// *****************************************************************************************************
+          
+
+
+2. null == undefined 
+
+null == undefined // true
+null === undefined // false
+
+// 💡 Note: Loose equality (==) treats null and undefined as equal. Strict equality (===) does not.
+
+
+
+
+
+// *****************************************************************************************************
+
+3. NaN === NaN
+
+console.log(NaN == NaN); // ❌ false
+
+or 
+
+console.log(NaN === NaN); // ❌ false
+
+
+
+Why?
+NaN is not equal to anything, even itself!
+Use Number.isNaN() to check for it.
+
+
+
+
+// *****************************************************************************************************
+
+
+  4. [] + []
+
+  console.log([] + []); // ''
+
+Note:
+
+Empty arrays get coerced to empty strings:  [].toString() ===> ''
+
+So:    '' + '' → ''
+
+
+// *****************************************************************************************************
+
+
+5. [] + {} vs. {} + []:
+
+
+console.log([] + {});  // '[object Object]'
+console.log({} + []);  // 0
+
+
+Why?
+
+[] + {} → '' + '[object Object]' → '[object Object]'
+
+{} + [] is parsed as a block ({}) followed by +[] → 0
+
+
+// *****************************************************************************************************
+
+
+
+6. typeof null
+
+
+console.log(typeof null); // 'object' ❌
+
+Why?
+A historical JavaScript bug — null is not an object, but typeof null incorrectly returns 'object'.
+
+
+
+// *****************************************************************************************************
+
+
+  7. '5' - 2 vs '5' + 2
+
+
+console.log('5' - 2); // 3 ✅
+console.log('5' + 2); // '52' ❌
+
+
+
+Why?
+
+- forces numeric coercion.
+
++ prefers string concatenation if one operand is a string.
+
+
+
+// *****************************************************************************************************
+
+  8. false == '0'
+
+
+console.log(false == '0'); // ✅ true
+
+
+Note: 
+
+=> false → 0
+=> '0' → 0
+
+So, 0 == 0 → true
+
+
+
+// *****************************************************************************************************
+
+
+9. true + true
+
+console.log(true + true); // 2 ✅
+
+Note: 
+Booleans convert to numbers:
+
+true → 1
+
+So, 1 + 1 → 2
+
+
+// *****************************************************************************************************
+
+
+10. parseInt('08') vs parseInt('08', 10)
+
+
+onsole.log(parseInt('08'));     // 0 ❌ (in old browsers, parsed as octal)
+console.log(parseInt('08', 10)); // 8 ✅
+
+Why?
+Without radix, older JS engines treated '08' as octal (invalid digit → 0). Always specify radix.
+
+
+  
+// *****************************************************************************************************
+  
+  
+
+11. [1, 2, 3] == '1,2,3'
+
+console.log([1,2,3] == '1,2,3'); // ✅ true
+
+Why?
+Array is coerced to string:
+
+
+[1,2,3].toString() → '1,2,3'
+
+So, '1,2,3' == '1,2,3' → true
+
+
+  
+// *****************************************************************************************************
+
+  
+
+
