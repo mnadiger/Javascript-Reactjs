@@ -1,0 +1,39 @@
+
+Understand these Git Commands to go from 0 → to hero:
+//***************************************
+
+1️⃣ git init: Initialize the current directory as a Git repository, allowing version control for your project's files.
+
+2️⃣ git clone <url>: Clone a Git repository from the specified URL onto your local machine, creating a copy of the entire repository.
+
+3️⃣ git status: Display the list of modified files in the current directory and shows if they are staged for the next commit.
+
+4️⃣ git log: View the commit history of the repository, displaying information about past commits and their authors.
+
+5️⃣ git add -A: Stage all changed files in the current directory for the next commit, including new files and deletions.
+
+6️⃣ git commit -m 'your message': Commit the staged changes with a descriptive message explaining the changes you made.
+
+7️⃣ git pull origin main: Retrieve and merge the latest changes from the "main" branch of the remote repository into your local branch.
+
+8️⃣ git push origin main: Push your committed changes to the remote "main" branch, making your local changes available to others.
+
+9️⃣ git branch: List all the local branches in your repository.
+
+🔟 git merge develop: Merge the changes from the "develop" branch into your current branch.
+
+1️⃣1️⃣ git branch <branch-name>: Create a new branch with the given name.
+
+1️⃣2️⃣ git checkout <branch-name>: Switch from your current branch to the specified branch.
+
+1️⃣3️⃣ git branch -m <new-branch-name>: Rename your current branch to a new name.
+
+1️⃣4️⃣ git branch -d <branch-name>: Delete the specified branch locally (only if it's already merged).
+
+1️⃣5️⃣ git rm <file-name>: Remove a file from the project and stage its removal for the next commit.
+
+1️⃣6️⃣ git stash: Temporarily save your modified and staged changes so you can switch to a different branch without committing them.
+
+1️⃣7️⃣ git diff <branch-A-name>...<branch-B-name>: Show the differences between two branches, indicating what is on <branch-A-name> but not on <branch-B-name>.
+
+1️⃣8️⃣ git rebase <branch-name>: Rebase the current branch on top of the commits in <branch-name>, effectively putting your commits ahead.
