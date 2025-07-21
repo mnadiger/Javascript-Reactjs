@@ -1,3 +1,47 @@
+// What is the output of the below snippet?
+
+const arr = [5, 45, 2, 11, 30];
+console.log(arr.sort());
+
+// Output: [ 11, 2, 30, 45, 5 ]
+
+// Why?
+
+Because Array.prototype.sort() in JavaScript, 
+by default, converts elements to strings and sorts them lexicographically (dictionary order), not numerically.
+
+
+🧠 Explanation:
+'11' comes before '2' in dictionary (string) comparison.
+
+So the numbers are sorted as strings:
+
+'11', '2', '30', '45', '5'
+
+That’s why the result looks “wrong” if you're expecting numerical order.
+
+
+✅ How to sort numerically:
+    -  To sort the array numerically in ascending order, pass a compare function:
+
+  arr.sort((a, b) => a - b);
+
+  🔁 This will output:
+
+  [ 2, 5, 11, 30, 45 ]
+
+
+
+📌 Summary:
+     -   arr.sort() = string sort (lexicographical)
+  
+     -  arr.sort((a, b) => a - b) = correct numerical sort
+
+
+// ****************************************************************
+
+
+
 // Find the output:  USAGE of "use-strict"
 
 
