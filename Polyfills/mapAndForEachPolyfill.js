@@ -31,7 +31,7 @@ const result = arr.map(element => element * 2);
 console.log("Normal Map Usage:",result);
 
 
-Array.prototype.mapMap = function (callback) {
+Array.prototype.myMap = function (callback) {
     const res = [];
     for (let index = 0; index < this.length; index++) {
         res.push(callback(this[index], index, this));
@@ -39,5 +39,5 @@ Array.prototype.mapMap = function (callback) {
     return res;
 }
 
-const mapRes = arr1.mapMap((el) => el * 3);
+const mapRes = arr1.myMap((el) => el * 3);
 console.log("MyMap polyfil usage: ", mapRes);
