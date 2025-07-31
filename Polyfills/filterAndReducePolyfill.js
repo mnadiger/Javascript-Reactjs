@@ -30,7 +30,7 @@ console.log("MyFilter method: ", myFilterRes)
 
 const arr1 = [1, 2, 3, 4, 5];
 
-//Normal usage of MAP and it returns new array.
+//Normal usage of Reduce and it returns new array.
 const res1 = arr1.reduce((acc, element) => acc + element, 0);
 console.log("Normal Reduce:",res1);
 
