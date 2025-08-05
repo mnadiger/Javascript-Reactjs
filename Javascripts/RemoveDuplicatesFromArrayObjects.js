@@ -19,7 +19,7 @@
 
 
 
-// 1. Easy one
+// 1. Easy one:  
 
     function removeDuplicates(arr) {
       
