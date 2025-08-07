@@ -7,7 +7,7 @@ const arr = [1, 2, 3, 4, 5];
 arr.forEach((element, index) =>  console.log(`Without Polyfill: Element at index ${index} is ${element}`))
 
 
-//Polyfil forEach
+//Polyfil for forEach method
 
 function printSomething(element, index, array) {
     console.log(`With Polyfill: Element at index ${index} is ${element} from the the given array ${array}`)
