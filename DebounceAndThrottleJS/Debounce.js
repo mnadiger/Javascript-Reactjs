@@ -21,7 +21,7 @@ const searchQuery = (message) => {
     console.log(`Debounced message: ${message}`);
 }
 
-// Example usage of debounce
+// Example usage of debounce....
 const debouncedResult = debounce(searchQuery, 1000);
 
 // Simulate rapid calls to the debounced function
