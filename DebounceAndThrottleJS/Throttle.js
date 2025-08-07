@@ -11,7 +11,7 @@ function throttle(func, delay) {
   };
 }
 
-// Example usage of throttle
+// Example usage of throttle....
 const logMessage = (message) => {
   console.log(`Throttled message: ${message}`);
 }
