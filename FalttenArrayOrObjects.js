@@ -1,7 +1,7 @@
 
 /**
 
-NEXTPOINT Company:
+NEXTPOINT Company: ...
 
 Given Input:
 var arr = [[1,2], [3,4], [4,5]] 
