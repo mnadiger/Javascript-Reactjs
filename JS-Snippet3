@@ -1,0 +1,88 @@
+// JS-Snippet: Asked in GLobla Logic
+
+for (let i = 0; i < 5; i++) {
+  setTimeout(() => console.log(i), 0);
+}
+
+
+Outout:
+0
+1
+2
+3
+4
+
+
+//Explanation
+
+  -  let i → block scoped.
+  -  Each iteration creates a new binding of i.
+  -  setTimeout(..., 0) → schedules the callback to run after the loop finishes (because timers are async, pushed into the task queue).
+  -  When the loop ends, all scheduled callbacks execute in order.
+  -  Each callback remembers the value of i at that iteration (thanks to let).
+
+
+If you had used var i instead of let i, the output would be:
+
+5
+5
+5
+5
+5
+
+
+
+
+Why not always 5?
+
+  -  The key difference is between let and var.
+
+  -  With let, each iteration of the loop creates a new block-scoped i variable.
+
+  -  So when setTimeout eventually runs, the closure "remembers" the value of i at that iteration.
+
+  -  With var, there is only one function-scoped i shared across all iterations. By the time callbacks run, i has become 5.
+
+
+
+How does setTimeout(..., 0) actually work?
+
+  -  The 0 delay means “run as soon as the current call stack is clear”, not literally immediately.
+
+  -  So, yes, the callbacks run after the loop finishes.
+
+  -  But what each callback "sees" depends on what variable binding it closed over:
+
+  -  let → each callback has its own copy.
+
+  -  var → all callbacks share the same reference.
+
+***************************************************************************************************************************
+
+
+let j = 0;
+for (j = 0; j < 5; j++) {
+    setTimeout(() => console.log(j), 0);
+}
+
+output: 
+5
+5
+5
+5
+5
+
+
+What’s happening
+
+  -  let j = 0; declares one single block-scoped variable j in the outer scope (outside the loop).
+
+  -  The for loop updates this same j in each iteration.
+
+  -  setTimeout(..., 0) still schedules the callbacks to run after the loop finishes.
+
+  -  By the time the loop finishes, the value of j has become 5 (since the loop condition fails when j === 5).
+
+  -  All the scheduled callbacks close over the same j (not a fresh copy per iteration like in the earlier let i inside for case).
+    ____________________________________________________
+
