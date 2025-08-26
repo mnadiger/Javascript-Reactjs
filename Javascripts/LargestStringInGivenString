@@ -1,0 +1,80 @@
+//find the largest word (longest string) in the given sentence:
+
+const inputSentence = 'The quick brown fox jumpssss over the lazy dog';
+
+// result : jumpssss   =>  Asked in Global Logic Interview
+
+
+function findLargetString(str) {
+    
+    const arr = str.split(" "); 
+    
+    let largestStr = '';
+    let maxLength = 0;
+    
+    
+    for(let i=0; i<arr.length; i++) {
+        
+        if(arr[i].length > maxLength) {
+            
+            largestStr = arr[i];
+            maxLength = arr[i].length;
+        
+        }
+        
+    }
+    
+    return largestStr;
+}
+
+console.log(findLargetString(inputSentence))
+
+
+
+
+
+
+or
+
+
+
+
+function findLargestWord(sentence) {
+  const words = sentence.split(" ");          // split by spaces
+  let largest = "";
+
+  for (let word of words) {
+    if (word.length > largest.length) {
+      largest = word;
+    }
+  }
+  return largest;
+}
+
+console.log(findLargestWord(inputSentence));
+
+
+
+
+or
+
+//return all the words that share the maximum length.
+
+function findLargestWords(sentence) {
+  const words = sentence.split(" ");
+  let maxLen = 0;
+  let largestWords = [];
+
+  for (let word of words) {
+    if (word.length > maxLen) {
+      maxLen = word.length;
+      largestWords = [word]; // reset with new largest
+    } else if (word.length === maxLen) {
+      largestWords.push(word); // add same-length word
+    }
+  }
+
+  return largestWords;
+}
+
+console.log(findLargestWords(inputSentence));
