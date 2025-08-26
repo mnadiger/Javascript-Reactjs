@@ -86,3 +86,29 @@ What’s happening
   -  All the scheduled callbacks close over the same j (not a fresh copy per iteration like in the earlier let i inside for case).
     ____________________________________________________
 
+
+
+***************************************************************
+
+
+
+This is a classic interview follow-up: “How do you fix it if it prints only 5 5 5 5 5?”
+
+Here are 2 common fixes:
+
+✅ 1. IIFE (Immediately Invoked Function Expression)
+
+Wrap each iteration’s value into a closure:
+
+for (var i = 0; i < 5; i++) {
+  (function(x) {
+    setTimeout(() => console.log(x), 0);
+  })(i);
+}
+
+✅ 2. Using setTimeout’s extra arguments
+
+
+for (var i = 0; i < 5; i++) {
+  setTimeout((x) => console.log(x), 0, i);
+}
