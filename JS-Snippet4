@@ -1,0 +1,49 @@
+How can i concate the below firstName and lastName without + operator?
+
+console.log("Full Name:", firstName + lastName);
+
+
+Solutions:
+
+✅ 1. Template literals (most modern & recommended):
+
+    const firstName = "John";
+    const lastName = "Doe";
+    
+    console.log(`Full Name: ${firstName} ${lastName}`);
+
+
+✅ 2. String.concat() method:
+
+      const firstName = "John";
+      const lastName = "Doe";
+      
+      console.log("Full Name:", firstName.concat(" ", lastName));
+
+
+
+✅ 3. Array + join():
+
+    const firstName = "John";
+    const lastName = "Doe";
+    
+    console.log("Full Name:", [firstName, lastName].join(" "));
+
+
+
+✅ 4. Intl.ListFormat (cool trick, also handles localization):
+
+    const firstName = "John";
+    const lastName = "Doe";
+    
+    const formatter = new Intl.ListFormat("en", { style: "long", type: "conjunction" });
+    console.log("Full Name:", formatter.format([firstName, lastName]));
+
+
+
+
+
+⚡ The simplest and modern way is Template literals (`${firstName} ${lastName}`).
+
+
+
