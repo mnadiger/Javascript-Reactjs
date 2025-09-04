@@ -1,0 +1,41 @@
+Why Does JavaScript Log This Strange Output ?
+
+Check the below code......
+
+              console.log("A);
+              
+              setTimeout(() => console.log("B"), 0);
+              
+              Promise.resolve()
+              .then(() => console.log("C"))
+              .then(() => console.log("D"));
+              
+              console.log("E");
+
+Output:
+
+A
+E 
+C
+D
+B
+
+JavaScript is single-threaded, but its event loop makes execution order tricky :
+
+    1. Synchronous code first
+    2. "A" and "E" are logged immediately.
+    3. Microtasks before Macrotasks
+    4. Promises (C and D) go into the microtask queue, which runs after the synchronous code.
+    5. Timeout last
+    6. setTimeout(..., 0) goes into the macrotask queue, which only runs after all microtasks finish.
+
+
+
+In event loop:
+
+    Synchronous code ->runs first
+    Microtasks (Promises, MutationObserver) -> run next
+    Macrotasks (setTimeout, setInterval, I/O) -> run last
+
+
+Understanding this order is critical when debugging async code otherwise, your app may not behave as expected.
