@@ -2,6 +2,7 @@ Why Does JavaScript Log This Strange Output ?
 
 Check the below code......
 
+Example1:
               console.log("A);
               
               setTimeout(() => console.log("B"), 0);
@@ -13,12 +14,34 @@ Check the below code......
               console.log("E");
 
 Output:
+        A
+        E 
+        C
+        D
+        B
 
-A
-E 
-C
-D
-B
+
+Example2:
+
+      async function test() {
+          console.log("1");
+          await Promise.resolve()
+          .then(() => console.log("5"));
+          console.log("2");
+      }
+      
+      console.log("3");
+      test();
+      console.log("4");
+
+Output:
+      3
+      1
+      4
+      5
+      2
+
+
 
 JavaScript is single-threaded, but its event loop makes execution order tricky :
 
