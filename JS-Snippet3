@@ -22,7 +22,7 @@ Outout:
   -  Each callback remembers the value of i at that iteration (thanks to let).
 
 
-If you had used var i instead of let i, the output would be:
+//If you had used var i instead of let i, the output would be:
 
 5
 5
