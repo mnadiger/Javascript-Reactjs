@@ -1,0 +1,22 @@
+console.log(1 + [0]); // Output: "10"
+Why? Step by step:
+We have 1 + [0].
+
+The + operator in JavaScript can mean numeric addition or string concatenation.
+
+If either operand is a string, JS will convert the other to a string and concatenate.
+
+[0] is an array with a single element.
+
+When used in a string/primitive context, arrays are converted with .toString().
+
+[0].toString() → "0".
+
+Now the expression becomes:
+
+js
+Copy code
+1 + "0"
+Since one operand is a string, JS coerces the other (1) into a string too.
+
+"1" + "0" → "10"
