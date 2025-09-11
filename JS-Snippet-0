@@ -1,0 +1,59 @@
+const add = (a = 2, b = 4) => a + b; 
+
+console.log(add()); 
+console.log(add(3)); 
+console.log(add(null, 4)); 
+console.log(add(undefined, 10));
+
+Great example 👌 Let’s break it down.
+
+We have:
+
+const add = (a = 2, b = 4) => a + b;
+
+console.log(add());           
+console.log(add(3));          
+console.log(add(null, 4));    
+console.log(add(undefined, 10));
+
+Step-by-step execution:
+
+add()
+
+No arguments passed.
+
+Defaults: a = 2, b = 4.
+
+2 + 4 = 6.
+✅ Output: 6
+
+add(3)
+
+a = 3, second argument missing → b takes default 4.
+
+3 + 4 = 7.
+✅ Output: 7
+
+add(null, 4)
+
+a = null (explicitly passed, so default is not applied).
+
+b = 4.
+
+null is coerced to 0 in numeric context.
+
+0 + 4 = 4.
+✅ Output: 4
+
+add(undefined, 10)
+
+a = undefined (explicitly passed).
+
+Default values in JS apply only if the argument is undefined.
+
+So a becomes default 2.
+
+b = 10.
+
+2 + 10 = 12.
+✅ Output: 12
