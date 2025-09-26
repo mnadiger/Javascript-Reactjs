@@ -1,0 +1,37 @@
+In frontend development, a proxy usually means:
+
+➡️ A middle layer between your frontend app (like React/Angular/Vue) and the backend server.
+➡️ Its main job is to forward API requests from the UI to the backend.
+
+
+
+Why do we need it?
+    
+    To avoid CORS (Cross-Origin Resource Sharing) issues.
+    
+    To hide backend server details from the browser.
+    
+    To route requests easily during local development.
+
+
+
+Example (React Dev Proxy – package.json)
+
+    {
+      "name": "frontend-app",
+      "version": "1.0.0",
+      "proxy": "http://localhost:5000"
+    }
+
+
+
+✅ If frontend runs on http://localhost:3000 and backend on http://localhost:5000:
+
+  A call to fetch('/api/users') from the React app automatically gets proxied to http://localhost:5000/api/users.
+  
+  Browser thinks request goes to same origin (3000), so no CORS problem.
+
+👉 In frontend, proxy is about redirecting API calls transparently.
+
+
+
