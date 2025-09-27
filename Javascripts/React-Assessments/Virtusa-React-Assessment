@@ -1,0 +1,48 @@
+//React sample component to validate password with below considtions:
+
+//1. Maximum characters allowed is 8
+//2. Password first value should be Uppercase
+//3. It should contain any other small characters and atleast one special character and one number
+
+
+import React, { useState } from 'react';
+import LoginForm from './LoginFrom';
+import './style.css';
+
+export default function App() {
+  const [error, setError] = useState('');
+
+  const validatePassword = (event) => {
+    const pwd = event.target.value;
+    // const upperCases = 'ABCDE';
+
+    // console.log('password entered', pwd.split(''));
+
+    // if (!upperCases.includes(pwd.split('')[0])) {
+    //   setError('Forst character should be uppercase');
+    // }
+
+    // Rules: 8 chars, 1st uppercase, at least 1 number & 1 symbol
+    const passwordRegex =
+      /^(?=[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8}$/;
+
+    if (!passwordRegex.test(pwd)) {
+      setError('First character should be uppercase');
+    }
+  };
+
+  return (
+    <div>
+      <h1> Password Check </h1>
+
+      <label> Password </label>
+      <input
+        type="password"
+        onClick={(e) => validatePassword(e)}
+        palceholder="Enter password"
+        maxlength="8"
+      />
+      {error ? error : null}
+    </div>
+  );
+}
