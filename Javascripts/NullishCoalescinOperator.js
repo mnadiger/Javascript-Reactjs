@@ -3,7 +3,7 @@
   - The nullish coalescing operator (??) in JavaScript provides a concise way to handle cases where a variable might be null or undefined.
   - It returns the right-hand side operand if the left-hand side is null or undefined; otherwise, it returns the left-hand side value. 
 
-// How it Works:
+// How it Works:   
 
   -  The operator is represented by two question marks: ??. 
   -  It evaluates the left-hand side expression. 
