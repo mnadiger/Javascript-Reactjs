@@ -3,7 +3,7 @@ How can i concate the below firstName and lastName without + operator?
 console.log("Full Name:", firstName + lastName);
 
 
-Solutions:
+// Solutions:   
 
 ✅ 1. Template literals (most modern & recommended):
 
