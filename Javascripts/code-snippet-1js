@@ -7,8 +7,8 @@ console.log([] == ![])
 
 // Output: true
 
-// Note:evaluates to true, and this can seem very confusing at first glance. 
-// But this happens due to type coercion in JavaScript. Let's break it down step by step:
+// Note:evaluates to true, and this can seem very confusing at first glance.     
+// //But this happens due to type coercion in JavaScript. Let's break it down step by step:
 
   -  Step 1: Evaluate ![]
             -  [] (an empty array) is a truthy value.
