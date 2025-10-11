@@ -1,0 +1,114 @@
+const obj = {
+  a: 1,
+  b: 2,
+  sum() {
+    return this.a + this.b
+  }
+}
+
+consr result = obj.sum;
+console.log(result());
+
+
+Output: NaN
+
+Why?
+
+
+🧠 Step-by-step Explanation:
+
+1. Object definition:
+
+    const obj = {
+      a: 1,
+      b: 2,
+      sum() { return this.a + this.b }
+    };
+
+
+✅ Here, sum is defined as a method of obj.
+
+When you call it as obj.sum(), the this inside the function refers to obj.
+
+So:
+
+obj.sum(); // returns 3 (1 + 2)
+
+
+
+2. Assigning the method to a variable:
+
+const result = obj.sum;
+
+
+Now, you are not calling sum().
+You are just copying the function reference to a standalone variable result.
+
+At this point:
+
+result === obj.sum  // true (same function reference)
+
+
+BUT — now result is not bound to obj anymore.
+So, when you later call:
+
+result();
+
+
+"this" inside that function is no longer obj.
+
+
+
+⚙️ 3. What is "this" inside result()?
+
+
+That depends on how the function is called.
+
+In strict mode, this is undefined.
+
+In non-strict mode, this refers to the global object (window in browsers, global in Node.js).
+
+So inside sum():
+
+this.a  // undefined (since 'this' is not 'obj')
+this.b  // undefined
+
+
+Hence:
+
+this.a + this.b  // results in NaN (undefined + undefined)
+
+
+
+⚡ 4. Output
+
+If you log the variable directly:
+
+console.log(result);
+
+
+You’ll see:
+
+ƒ sum() {
+  return this.a + this.b;
+}
+
+
+✅ Because console.log(result) just prints the function definition, not the result of executing it.
+
+If you had written:
+
+console.log(result());
+
+
+Then you’d get:
+
+NaN
+
+✅ Summary:
+
+Expression	              Meaning	                                                  Output:
+___________________________________________________________________________________________________
+obj.sum()	              Called as a method → this = obj	                             3
+result = obj.sum	      Copying function (no this binding)	                         —
+result()	              Called standalone → this = undefined or window	             NaN
