@@ -7,7 +7,7 @@ console.log(add(undefined, 10));
 
 Great example 👌 Let’s break it down.
 
-We have:
+We have::::
 
 const add = (a = 2, b = 4) => a + b;
 
