@@ -1,0 +1,53 @@
+
+console.log(1 + + "2" + "2");
+
+Output: 32
+
+why?
+
+🧩 Step 1: Identify the expression
+
+    1 + + "2" + "2"
+
+
+  Here we have:
+
+    -  a number 1
+    -  a unary plus (+) before "2"
+    -  and another "2" (a string)
+
+🧠 Step 2: Understand the unary plus
+
+  The unary plus (+) operator tries to convert its operand to a number.
+
+  +"2"  // converts the string "2" → number 2
+
+
+So now the expression becomes:
+
+1 + 2 + "2"
+
+
+🔢 Step 3: Evaluate left-to-right
+
+  JavaScript evaluates from left to right.
+
+  (a) First: 1 + 2
+
+    Both are numbers → numeric addition
+    → 3
+  
+    Now we have:
+
+    3 + "2"
+
+  (b) Second: 3 + "2"
+
+    Now one operand is a string, and one is a number.
+
+
+👉 In JavaScript, when one operand is a string, the other is converted to a string, and concatenation happens.
+
+So:
+
+3 + "2"  →  "3" + "2" → "32"
