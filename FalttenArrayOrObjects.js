@@ -8,6 +8,30 @@ var arr = [[1,2], [3,4], [4,5]]
 // output: [1,2,3,4,5] Note: Remove duplicate elements.
 *********************/
 
+//Solution0: With Recursive is the best one
+
+const arr = [ [1, 2], [3, 4], [4, 5, [6,7, [8,9]]]];
+
+
+const flattenedArr = [];
+function recursiveFlat(arr) {
+
+    for (const element of arr) {
+        if(typeof(element) === 'object') {
+            recursiveFlat(element)
+        } else {
+            flattenedArr.push(element);
+        }
+    }
+    return flattenedArr;
+}
+
+
+console.log(recursiveFlat(arr)); // [1, 2, 3, 4, 4, 5, 6, 7, 8, 9]
+
+//***************************************************************
+
+
 //Solutio1: WITHOUT ANY INBUILT methods
 
 
