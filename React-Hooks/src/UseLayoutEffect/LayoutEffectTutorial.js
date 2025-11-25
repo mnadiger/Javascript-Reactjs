@@ -3,6 +3,7 @@ import { useLayoutEffect, useEffect, useRef } from "react";
 function LayoutEffectTutorial() {
   const inputRef = useRef(null);
 
+  //UseLayoutEffect
   useLayoutEffect(() => {
     console.log(inputRef.current.value);
   }, []);
