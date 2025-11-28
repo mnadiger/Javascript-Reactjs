@@ -6,6 +6,7 @@
 // const symbols = "!@#$%^&*()_+[]{}<>?,.";
 
 
+//Asked in one Product based company
 
 function generatePassword(passLength) {
   const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
