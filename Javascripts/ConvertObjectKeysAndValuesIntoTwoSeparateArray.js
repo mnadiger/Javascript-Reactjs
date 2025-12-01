@@ -1,7 +1,7 @@
 // convert object keys and values in two separate arrays for the given below object. 
 
 let obj = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5};
-//Output: Output: ['a', 'b', 'c', 'd', 'e'] and [1, 2, 3, 4, 5]
+//Output:  ['a', 'b', 'c', 'd', 'e'] and [1, 2, 3, 4, 5]
 
 
 // 1. To separate the keys and values of the object into two arrays, you can use Object.keys() and Object.values(). 
