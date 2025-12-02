@@ -1,4 +1,4 @@
-// What is the output of the below snippet?
+// What is the output of the below snippet
 
 const arr = [5, 45, 2, 11, 30];
 console.log(arr.sort());
