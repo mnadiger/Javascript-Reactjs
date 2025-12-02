@@ -1,4 +1,4 @@
-How can i concate the below firstName and lastName without + operator?
+// How can i concate the below firstName and lastName without + operator?
 
 console.log("Full Name:", firstName + lastName);
 
