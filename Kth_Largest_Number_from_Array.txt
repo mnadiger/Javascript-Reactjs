@@ -39,3 +39,89 @@ function getNthLargestNumber(num) {
 }
 
 console.log(getNthLargestNumber(3)) // 444
+
+
+
+
+//****************************************************************
+
+//It finds the k-th largest number in an array, but without removing duplicates.
+
+function kthLargest(arr, k) {
+  return arr.slice().sort((a, b) => b - a)[k - 1];
+}
+
+console.log(kthLargest(arr, 3)); // still 444
+console.log(kthLargest(arr, 2)); // 555
+
+
+⭐ Step-by-step Explanation
+1️⃣ Copy the array
+arr.slice()
+
+
+slice() with no arguments makes a shallow copy of the array.
+
+This is done so we don’t modify the original array.
+
+Example:
+If you sort the copy, the original array stays the same.
+
+2️⃣ Sort the array in descending order
+.sort((a, b) => b - a)
+
+
+This sorts numbers from biggest → smallest.
+
+For your array, sorted version will look like:
+
+[1111, 1111, 555, 444, 222, 122, 45, 22, 11, 4, 3, 3, 2, 1, 1, 0]
+
+
+Notice: duplicates are kept.
+
+3️⃣ Pick the k-th largest element
+[k - 1]
+
+
+Why k - 1?
+
+Because array indexes start at 0:
+
+
+So:
+
+k = 3 → index = 2 → value = 444
+
+k = 2 → index = 1 → value = 555
+
+⭐ Full flow for k = 3
+
+Sorted array:
+
+[1111, 1111, 555, 444, 222, 122, ...]
+
+
+Take index 3 - 1 = 2:
+
+index 0 → 1111
+
+index 1 → 1111
+
+index 2 → 555
+
+index 3 → 444
+
+But since duplicates exist:
+
+3rd largest among duplicates is 555,
+
+4th largest is 444
+
+Your output works as expected.
+
+
+
+
+
+
