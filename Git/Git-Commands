@@ -37,3 +37,5 @@ Understand these Git Commands to go from 0 → to hero:
 1️⃣7️⃣ git diff <branch-A-name>...<branch-B-name>: Show the differences between two branches, indicating what is on <branch-A-name> but not on <branch-B-name>.
 
 1️⃣8️⃣ git rebase <branch-name>: Rebase the current branch on top of the commits in <branch-name>, effectively putting your commits ahead.
+
+1️⃣9️⃣ git rebase continue : it continue rebase until all the merge conflicts resolves
