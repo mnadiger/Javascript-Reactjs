@@ -7,7 +7,7 @@ const arr = [1, 2, 3, 4, 5]
 const res = arr.filter((element, index) => element > 2)
 console.log(res)
 
-//Polyfil filter filter
+//Polyfil filter filter.....
 
 
 Array.prototype.myFilter = function (callback) {
