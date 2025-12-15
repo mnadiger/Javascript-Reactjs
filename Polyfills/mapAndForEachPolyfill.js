@@ -1,4 +1,4 @@
-// Basic to advanced polyfills for map and forEach methods in JavaScript
+// Basic to advanced polyfills for map and forEach methods in JavaScript...
 
 //forEach example
 const arr = [1, 2, 3, 4, 5];
